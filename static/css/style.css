@@ -1,0 +1,138 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#wrapper {
+    width: 1000px;
+    margin: 0 auto;
+    padding-top: 30px;
+    background-color: rgb(50, 162, 182);
+}
+
+p {
+    font-family: 'Quicksand', sans-serif;
+}
+
+#flash {
+    display: block;
+    text-align: center;
+}
+
+#red {
+    color: red;
+}
+
+#green {
+    color: green;
+}
+
+#registration {
+    display: inline-block;
+    margin-left: 200px;
+    margin-top: 80px;
+}
+
+#registration h1 {
+    margin-left: 100px;
+    margin-bottom:  20px;
+}
+
+.entry {
+    border-radius: 3px;
+    display: block;
+    padding: 5px;
+}
+
+#login {
+    display: inline-block;
+    margin-left: 100px;
+    margin-top: 80px;
+}
+
+#login h1{
+    margin-left: 200px;
+    font-family: 'Quicksand', sans-serif;
+}
+#btn1, .post_btn, .comment_btn{
+    background-color: rgb(66, 111, 184);
+    color: white;
+    border-radius: 5px;
+    padding: 5px 15px;
+    margin-left: 100px;
+    margin-top: 15px;
+}
+
+#header {
+    width: 1000px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid black;
+}
+
+#header h1, #header h3 {
+    font-weight: normal;
+    font-family: 'Gamja Flower', cursive;
+}
+
+h2 {
+    font-family: 'Quicksand', sans-serif;
+    padding: 10px;
+    margin-left: 70px;
+}
+
+#msg_box {
+    margin-left: 75px;
+}
+
+#logout {
+    color: rgb(19, 85, 148);
+    border: none;
+    text-decoration: underline;
+    margin-left: 800px;
+    background-color: rgb(50, 162, 182);
+}
+
+#header h1 {
+    display: inline-block;
+}
+#header h3 {
+    display: inline-block;
+    margin-left: 500px;
+}
+.post_btn {
+    display: block;
+    margin-left: 750px;
+}
+
+.message_post {
+    
+    margin: 15px auto;
+    width: 800px;
+    padding: 10px;
+    background-color: white;
+}
+.poster {
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.msg_body {
+    margin-left: 20px;
+    font-weight: normal;
+}
+
+.comment_btn {
+    margin-left: 650px;
+}
+.comment_box {
+    margin-left: 500px;
+}
+.comment_post {
+    
+    margin: 10px;
+    width: 400px;
+    margin-left: 200px;
+    padding: 10px;
+    overflow: scroll;
+    overflow-wrap: normal;
+    
+}

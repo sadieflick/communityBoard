@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>email validation</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Gamja+Flower" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+        
+	</head>
+	<body>
+		<div id="wrapper">
+
+            <div id="header">
+                <h1>CodingDojo Wall</h1>
+                <h3>Welcome {{session["first_name"]}}</h3>
+                <form action="/logout">
+                    <input type="submit" name="logout" id = "logout" value="log off">
+                </form>
+            </div><!--end header-->
+
+            <div>
+                <h2>Post a message</h2>
+                <form action="/post" id= "post_container" method="post">
+                    <textarea rows="5" cols="150" id="msg_box" name = "message"></textarea>
+                    <input type="submit" class="post_btn" value="Post a message">
+                </form>
+            </div>
+
+            {%for table in messages:%}
+            <div class="message_post">
+                <p class= "poster">{{table.first_name}} {{table.last_name}} {{table.created_at.strftime("%B %d, %Y")}}</p>
+                <p class="msg_body">{{table.message}}</p>
+                <form action = "/comment" method = "post">
+                    <input type="hidden" name="message_id" value={{table.id}}>
+                    <textarea rows="3" cols="50" name = "comment" class="comment_box"></textarea>
+                    <button class="comment_btn">Leave a comment</button>
+                </form> 
+                    {%for i in commentList:%}
+
+                        {%if i.message_id == table.id:%}
+                            <div class="comment_post">
+                                <p class= "poster">{{i.first_name}} {{i.last_name}} {{i.created_at.strftime("%B %d, %Y")}}</p>
+                                <p class="msg_body">{{i.comment}}</p>
+                            </div>
+                        {%endif%}
+                    {%endfor%}
+
+            </div>
+            {%endfor%}
+
+        </div><!--end of wrapper-->
+	</body>
+</html>
