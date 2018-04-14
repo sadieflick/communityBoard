@@ -9,6 +9,11 @@
 	</head>
 	<body>
 		<div id="wrapper">
+            
+            <div id="hero">
+                <img src="/static/community.png" id="image">
+            </div>
+
             <div id="flash">
                 {% with messages = get_flashed_messages() %}
                     {% if messages %}
@@ -20,9 +25,7 @@
 
             </div>
 
-            <div id="hero">
-                <img src="/static/community.png" id="image">
-            </div>
+            
 
             <div id="registration">
                 <h1>Register here!</h1>

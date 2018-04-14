@@ -34,13 +34,18 @@ def wall():
         flash("You must be logged in to enter site.")
         return redirect('/')
 
+    query = "SELECT messages.message, messages.created_at, users.first_name, users.last_name, messages.id FROM messages JOIN users on users.id = messages.user_id ORDER BY created_at DESC"
+    session["messageList"] = mysql.query_db(query)
+
+    query = "SELECT comments.comment, comments.created_at, users.first_name, users.last_name, comments.message_id FROM comments JOIN users on users.id = comments.user_id ORDER BY comments.created_at;"
+    session["commentList"] = mysql.query_db(query)
+
+
     if "commentList" in session:
         print("in if for comment")
         return render_template('wall.html', messages= session['messageList'], commentList = session["commentList"])
     elif "messageList" in session:
         return render_template('wall.html', messages = session["messageList"])
-    # if "post_string" in session:
-    #     return render_template('wall.html', successMessage = session["successMessage"], first_name= session["first_name"], message=session["message"], post_string=session["post_string"])
     
     return render_template('wall.html')
 
@@ -147,12 +152,6 @@ def post():
     }
     mysql.query_db(insert, data)
 
-    query = "SELECT messages.message, messages.created_at, users.first_name, users.last_name, messages.id FROM messages JOIN users on users.id = messages.user_id ORDER BY created_at DESC"
-    messageList = mysql.query_db(query)
-
-    session["messageList"] = messageList
-    print("messageList = ", session["messageList"])
-
     return redirect("/wall")
 
 @app.route("/comment", methods = ["POST"])
@@ -167,15 +166,6 @@ def comment():
 
     postcomment = mysql.query_db(insert, data)
     print("Posting comment", postcomment)
-
-    query = "SELECT comments.comment, comments.created_at, users.first_name, users.last_name, comments.message_id FROM comments JOIN users on users.id = comments.user_id ORDER BY comments.created_at;"
-    data = { 'message_id': request.form["message_id"]}
-    commentList = mysql.query_db(query, data)
-
-    session["commentList"] = commentList
-    
-
-    # print("commentList = ", session["commentList"])
 
     return redirect("/wall")
 
