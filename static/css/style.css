@@ -3,6 +3,10 @@
     padding: 0px;
 }
 
+#body {
+    background-color: rgb(55, 69, 73);
+}
+
 #wrapper {
     width: 1000px;
     margin: 0 auto;
@@ -36,6 +40,11 @@ p {
 #registration h1 {
     margin-left: 100px;
     margin-bottom:  20px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+#registration p, #login p {
+    font-family: 'Quicksand', sans-serif;
 }
 
 .entry {
@@ -46,7 +55,7 @@ p {
 
 #login {
     display: inline-block;
-    margin-left: 100px;
+    margin-left: 50px;
     margin-top: 80px;
 }
 
@@ -54,6 +63,10 @@ p {
     margin-left: 200px;
     font-family: 'Quicksand', sans-serif;
 }
+#btn1 {
+    margin-bottom: 30px;
+}
+
 #btn1, .post_btn, .comment_btn{
     background-color: rgb(66, 111, 184);
     color: white;
@@ -71,13 +84,25 @@ p {
 
 #header h1, #header h3 {
     font-weight: normal;
-    font-family: 'Gamja Flower', cursive;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+#header h1 {
+    margin-left: 30px;
 }
 
 h2 {
     font-family: 'Quicksand', sans-serif;
     padding: 10px;
     margin-left: 70px;
+}
+
+#hero {
+    display: block;
+    margin: 20px 0px;
+}
+#image {
+    width: 1000px;
 }
 
 #msg_box {
@@ -88,7 +113,8 @@ h2 {
     color: rgb(19, 85, 148);
     border: none;
     text-decoration: underline;
-    margin-left: 800px;
+    margin-left: 830px;
+    margin-bottom: 20px;
     background-color: rgb(50, 162, 182);
 }
 
@@ -97,7 +123,7 @@ h2 {
 }
 #header h3 {
     display: inline-block;
-    margin-left: 500px;
+    margin-left: 30%;
 }
 .post_btn {
     display: block;

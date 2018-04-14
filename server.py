@@ -30,7 +30,6 @@ def index():
 @app.route('/wall')
 def wall():
 
-    print("messageList = ", session["messageList"])
     if "user_id" not in session:
         flash("You must be logged in to enter site.")
         return redirect('/')
@@ -134,10 +133,7 @@ def login():
 @app.route("/logout")
 def logout():
     
-    session.pop("user_id")
-    session.pop("first_name")
-    session.pop("last_name")
-    session.pop("email")
+    session.clear()
 
     flash("You have been logged out.")
     return redirect('/')

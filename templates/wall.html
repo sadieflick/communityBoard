@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>email validation</title>
+		<title>Community Board</title>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
         <link href="https://fonts.googleapis.com/css?family=Gamja+Flower" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
         
 	</head>
-	<body>
+	<body id="body">
 		<div id="wrapper">
 
             <div id="header">
-                <h1>CodingDojo Wall</h1>
+                <h1>Community Message Board!</h1>
                 <h3>Welcome {{session["first_name"]}}</h3>
                 <form action="/logout">
                     <input type="submit" name="logout" id = "logout" value="log off">
                 </form>
             </div><!--end header-->
+            
+            <div id="hero">
+                <img src="/static/community.png" id="image">
+            </div>
 
             <div>
                 <h2>Post a message</h2>
